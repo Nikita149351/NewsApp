@@ -20,7 +20,7 @@ const News= (props,category,country,pageSize)=> {
     
   
   const updateNews= async()=> {
-  // setProgress(0);
+
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     let data = await fetch(url);
     let parseData = await data.json()
@@ -35,22 +35,7 @@ const News= (props,category,country,pageSize)=> {
   
 updateNews();
 },[])
- 
 
-
-
-
-//  const HandlePreClick = async () => {
-//     console.log("previous")
-//     updateNews()
-//     setPage({ page: page - 1 })
-//   }
-
-//    const HandleNextClick = async () => {
-//     console.log("next");
-//     updateNews();
-//     setPage({ page: page + 1 })
-//   }
  const fetchMoreData= async()=>{
    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
    
